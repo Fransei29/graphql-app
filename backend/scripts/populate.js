@@ -6,12 +6,12 @@ const populate = async () => {
     console.log('Database synchronized!');
 
     // Inserta los datos
-    const socra = await Author.create({ name: 'Sócrates', age: 36 });
-    const platon = await Author.create({ name: 'Platón', age: 76 });
-    const aristo = await Author.create({ name: 'Platón', age: 57 });
-    const buda = await Author.create({ name: 'Buddha', age: 65 });
-    const lao = await Author.create({ name: 'Lao-Tzu', age: 88 });
-    const fredi = await Author.create({ name: 'Friedrich Nietzsche', age: 44 });
+    const socra = await Author.create({ name: 'Sócrates', age: 36, imageFileName: 'socra' });
+    const platon = await Author.create({ name: 'Platón', age: 76, imageFileName: 'pla' });
+    const aristo = await Author.create({ name: 'Aristoteles', age: 57, imageFileName: 'aris.jpg' });
+    const buda = await Author.create({ name: 'Buddha', age: 65, imageFileName: 'buda' });
+    const lao = await Author.create({ name: 'Lao-Tzu', age: 88, imageFileName: 'lao' });
+    const fredi = await Author.create({ name: 'Friedrich Nietzsche', age: 44, imageFileName: 'fru' });
 
     await Post.create({ title: 'The Wisdom of Ignorance', description: "True wisdom lies in recognizing one's own ignorance. There is no greater evil for a man than to consider that he knows what he does not know and to act based on that false belief."
 , authorId: socra.id });

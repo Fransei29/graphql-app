@@ -7,7 +7,8 @@ const authorType = new GraphQLObjectType({
   name: 'Author', 
   fields: {                                  // Campos del tipo Author
     name: { type: GraphQLString }, 
-    age: { type: GraphQLInt }
+    age: { type: GraphQLInt },
+    imageFileName: { type: GraphQLString }
   }
 });
 

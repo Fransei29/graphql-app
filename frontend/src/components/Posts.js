@@ -18,6 +18,7 @@ const Posts = () => {
                 author {
                   name
                   age
+                  imageFileName
                 }
               }
             }
@@ -45,6 +46,9 @@ const Posts = () => {
         <div className='card' key={index}>
           <h2>{post.title}</h2>
           <p>{post.description}</p>
+          {post.author.imageFileName && (
+            <img src={`/img/${post.author.imageFileName}`} alt={`${post.author.name}'s portrait`}/>
+          )}
           <h3>Author: {post.author.name} (Age: {post.author.age})</h3>
         </div>
       ))}

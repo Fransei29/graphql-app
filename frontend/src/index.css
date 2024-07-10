@@ -29,12 +29,15 @@ code {
 
 .card {
   background-color: rgb(130, 10, 10, 0.8);
+  font-size: 14px;
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   margin: 2%;
-  max-width: 300px;
+  max-width: 370px;
   max-height: 350px;
   border-radius: 15px;
   transition: transform 0.3s ease-in-out;
@@ -49,4 +52,9 @@ h1{
   display: flex;
   justify-content: center;
   padding: 25px;
+}
+
+img {
+  width: 150px;
+  max-height: 150px;
 }

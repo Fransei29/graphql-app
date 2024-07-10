@@ -16,6 +16,10 @@ const Author = sequelize.define('Author', {
   age: {
     type: DataTypes.INTEGER,
     allowNull: false
+  },
+  imageFileName: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 });
 
