@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'; // Importamos React y algunos hooks
 import axios from 'axios'; // Importamos Axios para hacer las solicitudes HTTP
+import PostForm from './PostForm';
+import SearchPost from './SearchPost';
+import DeletePost from './DeletePost';
+
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);       // Estado para almacenar los posts
@@ -42,6 +46,8 @@ const Posts = () => {
 
   return (                                    // Renderizamos los posts obtenidos
     <div className='card1'>
+      <SearchPost setPosts={setPosts} />
+      <PostForm setPosts={setPosts} /> 
       {posts.map((post, index) => (
         <div className='card' key={index}>
           <h2>{post.title}</h2>
@@ -50,6 +56,7 @@ const Posts = () => {
             <img src={`/img/${post.author.imageFileName}`} alt={`${post.author.name}'s portrait`}/>
           )}
           <h3>Author: {post.author.name} (Age: {post.author.age})</h3>
+          <DeletePost postId={post.id} setPosts={setPosts} />
         </div>
       ))}
     </div>
