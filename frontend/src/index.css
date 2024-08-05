@@ -61,25 +61,45 @@ img {
 
 form {
   display: flex;
-  flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 input {
-  border-radius: 10px;
+  border-radius: 8px;
   border-style: none;
   color: black;
   margin: 3px;
-  padding: 2px;
+  padding: 5px;
   max-width: 160px;
   max-height: 80px;
 }
 
 button {
-  border-radius: 10px;
+  max-height: 25px;
+  margin: 7px;
+  padding: 6px;
+  border-radius: 5px;
   border-style: none;
 }
 
 button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+
+.form-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

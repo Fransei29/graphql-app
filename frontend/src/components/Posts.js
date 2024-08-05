@@ -45,20 +45,24 @@ const Posts = () => {
   if (error) return <p>Error: {error}</p>;    // Mostramos un mensaje de error si algo sale mal
 
   return (                                    // Renderizamos los posts obtenidos
-    <div className='card1'>
-      <SearchPost setPosts={setPosts} />
-      <PostForm setPosts={setPosts} /> 
-      {posts.map((post, index) => (
-        <div className='card' key={index}>
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          {post.author.imageFileName && (
-            <img src={`/img/${post.author.imageFileName}`} alt={`${post.author.name}'s portrait`}/>
-          )}
-          <h3>Author: {post.author.name} (Age: {post.author.age})</h3>
-          <DeletePost postId={post.id} setPosts={setPosts} />
-        </div>
-      ))}
+    <div className='container'>
+      <div className='form-container'>
+        <SearchPost setPosts={setPosts} />
+        <PostForm setPosts={setPosts} /> 
+      </div>
+      <div className='card1'>
+        {posts.map((post, index) => (
+          <div className='card' key={index}>
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+            {post.author.imageFileName && (
+              <img src={`/img/${post.author.imageFileName}`} alt={`${post.author.name}'s portrait`} />
+            )}
+            <h3>Author: {post.author.name} (Age: {post.author.age})</h3>
+            <DeletePost postId={post.id} setPosts={setPosts} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
